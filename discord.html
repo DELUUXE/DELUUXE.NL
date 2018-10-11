@@ -1,0 +1,83 @@
+<!doctype:html>
+<html>
+    <head>
+        <title>ᗪᕮᒪᑌᑌ᙭ᕮ - discord</title>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+        <meta charset="UTF-8">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="ᗪᕮᒪᑌᑌ᙭ᕮ - Discord">
+        <meta property="og:description" content="Official website from DELUUXE. Here you can find: my discord, discord bots, DiscordChroma, etc.">
+        <meta property="og:image" content="https://i.imgur.com/U2hLl9t.png">
+        <meta property="og:image:secure_url" content="https://i.imgur.com/U2hLl9t.png" />
+        <meta property="og:url" content="http://www.deluuxe.nl/">
+        <!--<script src="D:\SCHOOL\github\DELUUXE-website\bowser-master\bowser-master\src\useragents.js"></script>-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            $.getJSON('//ipapi.co/json/', function(data) {
+                console.log(JSON.stringify(data, null, 2));
+                var language = data.languages.split("-")[0];
+                //console.log(language);
+            });
+        </script>     
+        <script>
+            document.onkeydown = function(e) {
+                if(event.keyCode == 123) {
+                    return false;
+                }
+                if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0) || e.ctrlKey && e.shiftKey && e.which == 'I'.charCodeAt(0)){
+                    return false;
+                }
+                if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0) || e.ctrlKey && e.shiftKey && e.which == 'J'.charCodeAt(0)){
+                    return false;
+                }
+                if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0) || e.ctrlKey && e.which == 'U'.charCodeAt(0)){
+                    return false;
+                }
+            }
+            $(document).keydown(function(e){
+                if(e.keyCode == 123) {
+                    return false;
+                }
+                if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0) || e.ctrlKey && e.shiftKey && e.which == 'I'.charCodeAt(0)){
+                    return false;
+                }
+                if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0) || e.ctrlKey && e.shiftKey && e.which == 'J'.charCodeAt(0)){
+                    return false;
+                }
+                if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0) || e.ctrlKey && e.which == 'U'.charCodeAt(0)){
+                    return false;
+                }
+            });
+        </script>
+        <script src="console.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2808253397164734",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+
+    <body oncontextmenu="return false;">
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <div w3-include-html="https://deluuxe.nl/nav.html"></div>
+        <script>
+            w3.includeHTML();
+        </script>
+
+        <div class="container">
+            <h1 style="color:red">This server is NOT intended for discord bot purposes please go to the <a href="discordbot.html"><button class="button">discordbot</button></a> tab</h1>
+            <script>
+
+            </script>
+            <br>
+            <iframe height="800px" width="100%" src="https://discordapp.com/widget?id=266614161868324865&amp;theme=light" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <footer>
+                <p>&copy; 2018 DELUUXE</p>
+            </footer>
+        </div>
+    </body>
+</html>

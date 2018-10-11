@@ -1,2 +1,4 @@
-# DELUUXE.NL
-the official website from deluuxe
+# DELUUXE-website
+the website of deluuxe
+
+developed in html javascript css and jquery

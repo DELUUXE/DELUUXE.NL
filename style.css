@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'font1';
+    src: url('zrnic.ttf'); 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    margin-top: 40px;
+}
+
+body {    
+    background: rgb(48, 48, 48);
+}
+
+
+p {
+    font-size: 2em;
+    font-family: 'font1';
+    color: rgb(255, 255, 255);
+}
+
+#features {
+    font-size: 2em;
+    font-family: 'font1';
+}
+
+h1 {
+    font-family: 'font1';
+    font-size: 40;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.headlogo {
+
+    height: 40px;
+    display: flex;
+    display: box;
+    align-items: center;
+}
+
+.navigation {
+    list-style: none;
+    margin: 0; 
+    padding:0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    animation-delay: 0.4s;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    font-family: 'font1';
+    font-size: 2em;
+    color: white;
+  }
+  
+  .navigation a:hover {
+    color: #00A2FF;
+    animation-delay: 0.4s;
+  }
+
+  .navigation a:active {
+      opacity: 0;
+  }
+
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background: rgb(48, 48, 48);
+    border: 5px solid white;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: auto;
+    margin: 5px;
+    font-family: 'font1';
+    border-radius: 15px;
+    box-shadow: 0 8px rgb(218, 218, 218);
+    transition: 0.1s ease-in-out;
+  }
+  .button:active {
+    box-shadow: none !important;
+    transform: translateY(6px) !important;
+}
+.button:focus {outline: none;}
+  .button:hover {
+      box-shadow: 0 5px #665;
+      transform: translateY(3px);
+  }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.emailbutton {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 5px solid #00A2FF;
+    color: #00A2FF;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: 100%;
+    margin: 5px;
+    font-family: 'font1';
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 0.1s ease-in-out;
+  }
+  
+  emailbutton:active {
+      background-color: #CFCFCF
+    }
+  
+  .emailbutton:hover {
+      background-color: #ffffff;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+  }
+
+.steam {
+    width: 100%;
+    height: 200%;
+    scrolling: no;
+    frameborder: 0;
+}
+
+
+@media only screen and (max-width: 680px) {
+    .navigation {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+}

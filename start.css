@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'font1';
+    src: url('zrnic.ttf'); 
+}
+
+.wrapper {
+  text-align: center;
+}
+ 
+p {
+  color: white;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 5px solid white;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    width: auto;
+    margin: auto;
+    font-family: 'font1';
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 0.1s ease-in-out;
+    position: absolute;
+    top: 50%;
+    justify-content: center;   
+  }
+  
+  .button:active {
+      background-color: #CFCFCF
+    }
+  
+  .button:hover {
+      background-color: #ffffff;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+  }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+
+body {
+    margin: 0;
+    background: #ffffff; 
+  }
+  video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: #ffffff;
+    background-size: cover;
+    transition: 1s opacity;
+  }
+
+  @media screen and (max-width: 500px) { 
+    div{width:70%;} 
+  }
+  @media screen and (max-device-width: 800px) {
+    video { display: none; }
+  }
