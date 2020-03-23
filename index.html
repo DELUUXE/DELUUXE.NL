@@ -140,9 +140,12 @@
                 $(this).css('color', '');
             });
         </script>
-        <footer>
-            <p>&copy; 2018 DELUUXE</p>
-        </footer>
+            <footer>
+                <p>&copy; DELUUXE</p>
+            </footer>
+            <script>
+                document.querySelector('footer').innerHTML = `<p>&copy; ${new Date().getFullYear()} DELUUXE</p>`
+            </script>
         </div>
     </body>
 </html>
