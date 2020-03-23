@@ -10,7 +10,7 @@
         <meta property="og:description" content="Official website from DELUUXE. Here you can find: my discord, discord bots, DiscordChroma, etc.">
         <meta property="og:image" content="https://i.imgur.com/U2hLl9t.png">
         <meta property="og:image:secure_url" content="https://i.imgur.com/U2hLl9t.png" />
-        <meta property="og:url" content="http://www.deluuxe.nl/">
+        <meta property="og:url" content="http://www.deluuxe.dev/">
         <!--<script src="D:\SCHOOL\github\DELUUXE-website\bowser-master\bowser-master\src\useragents.js"></script>-->
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
         <link rel="stylesheet" href="style.css" />
@@ -63,7 +63,7 @@
 
     <body oncontextmenu="return false;">
         <script src="https://www.w3schools.com/lib/w3.js"></script>
-        <div w3-include-html="https://deluuxe.nl/nav.html"></div>
+        <div w3-include-html="https://deluuxe.dev/nav.html"></div>
         <script>
             w3.includeHTML();
         </script>
@@ -76,8 +76,11 @@
             <br>
             <iframe height="800px" width="100%" src="https://discordapp.com/widget?id=266614161868324865&amp;theme=light" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
             <footer>
-                <p>&copy; 2018 DELUUXE</p>
+                <p>&copy; DELUUXE</p>
             </footer>
+            <script>
+                document.querySelector('footer').innerHTML = `<p>&copy; ${new Date().getFullYear()} DELUUXE</p>`
+            </script>
         </div>
     </body>
 </html>

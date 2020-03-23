@@ -47,7 +47,7 @@
 
     <body oncontextmenu="return false;">
         <script src="https://www.w3schools.com/lib/w3.js"></script>
-        <div w3-include-html="https://deluuxe.nl/nav.html"></div>
+        <div w3-include-html="https://deluuxe.dev/nav.html"></div>
         <script>
             w3.includeHTML();
         </script>
@@ -63,8 +63,11 @@
                     );*/
             </script>    
             <footer>
-                <p>&copy; 2018 DELUUXE</p>
-            </footer>     
+                <p>&copy; DELUUXE</p>
+            </footer>
+            <script>
+                document.querySelector('footer').innerHTML = `<p>&copy; ${new Date().getFullYear()} DELUUXE</p>`
+            </script>     
         </div>
     </body>
 </html>
