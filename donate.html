@@ -8,40 +8,13 @@
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="article">
         <meta property="og:title" content="ᗪᕮᒪᑌᑌ᙭ᕮ - donate">
-        <meta property="og:description" content="Official website from DELUUXE. This is the donation page.">
+        <meta property="og:description" content="Official website from DELUUXE.">
         <meta property="og:image" content="https://i.imgur.com/U2hLl9t.png">
         <meta property="og:image:secure_url" content="https://i.imgur.com/U2hLl9t.png" />
-        <meta property="og:url" content="http://www.deluuxe.nl/donate">
+        <meta property="og:url" content="http://www.deluuxe.dev/donate">
         <!--END autoembed END-->
-        <!-- Paypal -->
-        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
         <link rel="stylesheet" href="style.css" />
-        <style>
-            .select {
-                border: 1px solid #ccc;
-                width: 120px;
-                border-radius: 3px;
-                overflow: hidden;
-                background: #fafafa no-repeat 90% 50%;
-                text-align-last:center;
-                text-align: center;
-            }
-
-            .select select {
-                padding: 5px 8px;
-                width: 130%;
-                border: none;
-                box-shadow: none;
-                background: transparent;
-                background-image: none;
-                -webkit-appearance: none;
-            }
-
-            .select select:focus {
-                outline: none;
-            }
-        </style>
         <script>
             document.onkeydown = function(e) {
                 if(event.keyCode == 123) {
@@ -77,7 +50,7 @@
 
     <body oncontextmenu="return false;">
             <script src="https://www.w3schools.com/lib/w3.js"></script>
-            <div w3-include-html="https://deluuxe.nl/nav.html"></div>
+            <div w3-include-html="https://deluuxe.dev/nav.html"></div>
             <script>
                 w3.includeHTML();
             </script>
@@ -86,131 +59,13 @@
         <div class="container">
 
             <br>
-            <h1>Here you can donate to me.</h1>
-            <p style="text-align:center">How will my donation be used, i hear you ask. well, a big part of it is going to better hosting for the discordbot's. and the money that is left is will go to development(me).</p>
-            <br>
-            <p>Select your currency: <select class="select" id="selectcurrency">
-                    <option value="EUR">Euros</option>
-                    <option selected="true" value="USD">US Dollars</option>
-                    <option value="GBP">Great British Pounds</option>
-            </select></p>
-            <br>
-            <p>Select the amount: <select onchange="updatecurrency()" class="select" id="selectamount">
-                <option selected="true" value="5.00">5</option>
-                <option value="10.00">10</option>
-                <option value="25.00">25</option>
-                <option value="50.00">50</option>
-                <option value="customamount">Custom amount</option>
-            </select>
-            </p>
-            <p id="custominput">
-            Custom amount (don't use decimals): <input type="text" name="custominput" id="customamount" value="12" maxlength="3">
-            </p>
-            <script>
-                document.getElementById("custominput").style.display = 'none';
-                var Cinput = document.getElementById("custominput");
-            </script>
-            <script>
-                function updatecurrency() {
-                    var select1 = document.getElementById("selectamount");
-                    var amount = select1.options[select1.selectedIndex].value;
-                    if (amount == "customamount") {
-                        Cinput.style.display = '';
-                        iscustominput = true;
-                    } else {
-                        Cinput.style.display = 'none'; 
-                        iscustominput = false;
-                    }
-                }
-            </script>
-            <br>
-            <div id="paypal-button-container"></div>
-            <br>
-            <p style="font-size:15px;">by clicking the button above you accept the <a href="Javascript:alert('Check the amount you selected on checkout and no refunds.');">Terms</a>.</p>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script>
-                $("#customamount").keyup(function(){
-                    var customamount1 = document.getElementById("customamount").value;
-                    customamount1 = customamount1.replace(/[\D\s\._\-]+/g, "");
-                    customamount1 = customamount1 ? parseInt( customamount1, 10 ) : 0;
-                    $(customamount1).val( function() {
-                        return ( customamount1 === 0 ) ? "" : customamount1.toLocaleString( "en-US" );
-                    } );
-                    $("#customamount").val(customamount1);
-                });
-                paypal.Button.render({
-            
-                    env: 'production', // sandbox | production
-            
-                    client: {
-                        sandbox:    'Ab4LAtpsSuoroR0LwB8Fho1us19rFPSK1jR3N84yTb1_WNcXQHHHe79z1MNPDeR1QUq9zIi-ELKMSQd1',
-                        production: 'AaOBRbcu4Mwf6gZG3eo8b7JCYfgGVirRTAGh_h9fMcI-_Wsf8-WcRoLedxEUHjuYDTQqskKV7hKXeO8B'
-                    },
-            
-                    // Show the buyer a 'Pay Now' button in the checkout flow
-                    commit: true,
-            
-                    // payment() is called when the button is clicked
-                    payment: function(data, actions) {
-                        var select1 = document.getElementById("selectamount");
-                        var amount = select1.options[select1.selectedIndex].value;
-                        var select2 = document.getElementById("selectcurrency");
-                        var currency1 = select2.options[select2.selectedIndex].value;
-                        var customamount1 = document.getElementById("customamount").value;
-                        console.log(customamount1);
-                        if (iscustominput == false) {
-                            // Make a call to the REST api to create the payment
-                            return actions.payment.create({
-                                payment: {
-                                    transactions: [
-                                        {
-                                            amount: { total: amount, currency: currency1 }
-                                        }
-                                    ]
-                                }
-                            });
-                        } else if (iscustominput == true) {
-                            if (customamount1 == 0) {
-                                alert("0 is not a valid amount. please enter a different amount.");
-                                // Make a call to the REST api to create the payment
-                                return actions.payment.create({
-                                    payment: {
-                                        transactions: [
-                                            {
-                                                amount: { total: ",", currency: currency1 }
-                                            }
-                                        ]
-                                    }
-                                });
-                            } else if (customamount1 != 0) {
-                                // Make a call to the REST api to create the payment
-                                return actions.payment.create({
-                                    payment: {
-                                        transactions: [
-                                            {
-                                                amount: { total: customamount1 + ".00", currency: currency1 }
-                                            }
-                                        ]
-                                    }
-                                });
-                            }
-                        }
-                    },
-            
-                    // onAuthorize() is called when the buyer approves the payment
-                    onAuthorize: function(data, actions) {
-                        // Make a call to the REST api to execute the payment
-                        return actions.payment.execute().then(function() {
-                            window.alert('Thanks for your donation it will help a lot!');
-                        });
-                    }
-            
-                }, '#paypal-button-container');
-            </script>
-
+            <p style="text-align:center">This section has moved to the patreon page of the <a href="https://24-7music.com/premium" style="color:white">24/7 🔊 | Discord bot</a></p>
             <footer>
-                <p>&copy; 2018 DELUUXE</p>
+                <p>&copy; DELUUXE</p>
             </footer>
+            <script>
+                document.querySelector('footer').innerHTML = `<p>&copy; ${new Date().getFullYear()} DELUUXE</p>`
+            </script>
         </div>
     </body>
 </html>
